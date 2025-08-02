@@ -1,7 +1,6 @@
 import iziToast from 'izitoast';
 import 'izitoast/dist/css/iziToast.min.css';
 import { nanoid } from 'nanoid';
-// import { tasks } from './data';
 import { renderTasks } from './render-tasks';
 import { getFromLS, saveToLS } from './local-storage-api';
 import { STORAGE_KEYS, THEMES } from './constants';
@@ -45,7 +44,7 @@ export function onDeleteTaskBtnClick(e) {
   e.target.closest('li').remove();
 }
 
-export function onThemeChangeBtnCLick() {
+export function onThemeChangeBtnClick() {
   const classList = document.body.classList;
   const newTheme = classList.contains('theme-light')
     ? 'theme-dark'

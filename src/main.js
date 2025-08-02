@@ -4,7 +4,7 @@ import { renderTasks } from './js/render-tasks';
 import {
   onDeleteTaskBtnClick,
   onTaskFormSubmit,
-  onThemeChangeBtnCLick,
+  onThemeChangeBtnClick,
 } from './js/handlers';
 import { getFromLS } from './js/local-storage-api';
 import { STORAGE_KEYS } from './js/constants';
@@ -32,4 +32,4 @@ renderTasks(getFromLS(STORAGE_KEYS.TASK_LIST));
 
 refs.taskForm.addEventListener('submit', onTaskFormSubmit);
 refs.tasksList.addEventListener('click', onDeleteTaskBtnClick);
-refs.themeToggleBtn.addEventListener('click', onThemeChangeBtnCLick);
+refs.themeToggleBtn.addEventListener('click', onThemeChangeBtnClick);
