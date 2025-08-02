@@ -5,8 +5,10 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "start": "vite",
     "build": "vite build --base=/js-blended-task-05/",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "push": "node script/push.js"
   },
   "devDependencies": {
     "glob": "^11.0.0",
