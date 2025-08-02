@@ -1,5 +1,3 @@
-/* document.body.classList; */
-
 import { STORAGE_KEYS, THEMES } from './constants';
 import { getFromLS } from './local-storage-api';
 
