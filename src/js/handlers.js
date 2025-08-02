@@ -3,10 +3,10 @@ import 'izitoast/dist/css/iziToast.min.css';
 import { nanoid } from 'nanoid';
 // import { tasks } from './data';
 import { renderTasks } from './render-tasks';
-import { getFromLS } from './local-storage-api';
-import { STORAGE_KEYS } from './constants';
+import { getFromLS, saveToLS } from './local-storage-api';
+import { STORAGE_KEYS, THEMES } from './constants';
 
-let tasks = getFromLS(STORAGE_KEYS.TASK_LIST) || {};
+let tasks = getFromLS(STORAGE_KEYS.TASK_LIST) || [];
 
 export function onTaskFormSubmit(e) {
   e.preventDefault();
@@ -27,6 +27,8 @@ export function onTaskFormSubmit(e) {
   };
 
   tasks.push(task);
+  saveToLS(STORAGE_KEYS.TASK_LIST, tasks);
+
   e.target.reset();
   //   console.log(tasks);
 
@@ -39,5 +41,19 @@ export function onDeleteTaskBtnClick(e) {
   const taskId = e.target.dataset.id;
   tasks = tasks.filter(task => task.taskId !== taskId);
 
+  saveToLS(STORAGE_KEYS.TASK_LIST, tasks);
   e.target.closest('li').remove();
+}
+
+export function onThemeChangeBtnCLick() {
+  const classList = document.body.classList;
+  const newTheme = classList.contains('theme-light')
+    ? 'theme-dark'
+    : 'theme-light';
+
+  classList.remove(...THEMES);
+  classList.add(newTheme);
+  saveToLS(STORAGE_KEYS.SITE_THEME, newTheme);
+
+  //   console.log(classList);
 }

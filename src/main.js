@@ -1,5 +1,14 @@
-import { onDeleteTaskBtnClick, onTaskFormSubmit } from './js/handlers';
 import { refs } from './js/refs';
+import { renderTasks } from './js/render-tasks';
+// import { tasks } from './js/data';
+import {
+  onDeleteTaskBtnClick,
+  onTaskFormSubmit,
+  onThemeChangeBtnCLick,
+} from './js/handlers';
+import { getFromLS } from './js/local-storage-api';
+import { STORAGE_KEYS } from './js/constants';
+import { renderTheme } from './js/theme-switcher';
 
 /*
   Створи список справ.
@@ -17,5 +26,10 @@ import { refs } from './js/refs';
       <p>Текст</p>
   </li>
 */
+
+renderTheme();
+renderTasks(getFromLS(STORAGE_KEYS.TASK_LIST));
+
 refs.taskForm.addEventListener('submit', onTaskFormSubmit);
 refs.tasksList.addEventListener('click', onDeleteTaskBtnClick);
+refs.themeToggleBtn.addEventListener('click', onThemeChangeBtnCLick);
