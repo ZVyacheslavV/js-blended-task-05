@@ -1,3 +1,6 @@
+import { onDeleteTaskBtnClick, onTaskFormSubmit } from './js/handlers';
+import { refs } from './js/refs';
+
 /*
   Створи список справ.
   На сторінці є два інпути які має вводиться назва і текст задачі.
@@ -14,3 +17,5 @@
       <p>Текст</p>
   </li>
 */
+refs.taskForm.addEventListener('submit', onTaskFormSubmit);
+refs.tasksList.addEventListener('click', onDeleteTaskBtnClick);
