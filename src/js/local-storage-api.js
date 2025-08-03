@@ -1,12 +1,14 @@
-export function getFromLS(key, defaultValue) {
+//JS Course teacher's variant:
+/* export function getFromLS(key, defaultValue) {
   const jsonData = localStorage.getItem(key);
   try {
     return JSON.parse(jsonData);
   } catch {
     defaultValue || jsonData;
   }
-}
+} */
 
+//Blended teacher's variant:
 /* function getFromLS(key) {
   try {
     const jsonData = localStorage.getItem(key);
@@ -16,7 +18,8 @@ export function getFromLS(key, defaultValue) {
   }
 } */
 
-/*   function getFromLS(key, defaultValue) {
+//From GPT improved-1st variant:
+export function getFromLS(key, defaultValue) {
   const jsonData = localStorage.getItem(key);
 
   if (jsonData === null) {
@@ -30,7 +33,7 @@ export function getFromLS(key, defaultValue) {
   }
 }
 
-Що тут:
+/*Що тут:
 
     Якщо ключа немає → повертаємо defaultValue.
 
