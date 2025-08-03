@@ -4,4 +4,4 @@ export const refs = {
   themeToggleBtn: document.querySelector('#themeToggle'),
 };
 
-/* export default refs; */
+// export default refs;
