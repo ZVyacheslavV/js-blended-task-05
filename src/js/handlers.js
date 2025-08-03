@@ -14,6 +14,12 @@ export function onTaskFormSubmit(e) {
   const taskNameValue = taskName.value.trim();
   const taskDescriptionValue = taskDescription.value.trim();
 
+  //Deed destructuring, without trim():
+  /* const {
+    taskName: { value: taskNameValue },
+    taskDescription: { value: taskDescriptionValue },
+  } = e.target.elements; */
+
   if (!taskNameValue || !taskDescriptionValue) {
     iziToast.error({ message: 'Fill input', position: 'topLeft' });
     return;
