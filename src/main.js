@@ -1,6 +1,5 @@
 import { refs } from './js/refs';
 import { renderTasks } from './js/render-tasks';
-// import { tasks } from './js/data';
 import {
   onDeleteTaskBtnClick,
   onTaskFormSubmit,
@@ -28,7 +27,15 @@ import { renderTheme } from './js/theme-switcher';
 */
 
 renderTheme();
-renderTasks(getFromLS(STORAGE_KEYS.TASK_LIST, []));
+renderTasks(
+  getFromLS(STORAGE_KEYS.TASK_LIST, [
+    {
+      taskId: '1',
+      taskName: 'Illustrative task',
+      taskDescription: 'Hello world',
+    },
+  ])
+);
 
 refs.taskForm.addEventListener('submit', onTaskFormSubmit);
 refs.tasksList.addEventListener('click', onDeleteTaskBtnClick);
