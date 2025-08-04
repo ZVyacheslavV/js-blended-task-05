@@ -28,7 +28,7 @@ import { renderTheme } from './js/theme-switcher';
 */
 
 renderTheme();
-renderTasks(getFromLS(STORAGE_KEYS.TASK_LIST));
+renderTasks(getFromLS(STORAGE_KEYS.TASK_LIST, []));
 
 refs.taskForm.addEventListener('submit', onTaskFormSubmit);
 refs.tasksList.addEventListener('click', onDeleteTaskBtnClick);
