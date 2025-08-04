@@ -1,6 +1,6 @@
 import { refs } from './refs';
 
-export function renderTasks(tasks) {
+export function renderTasks(tasks = []) {
   const markup = tasks
     .map(
       ({ taskId, taskName, taskDescription }) =>
